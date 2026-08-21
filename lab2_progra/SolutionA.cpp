@@ -86,7 +86,32 @@
         *maxResult = maxValue;
     }
 
-    //A.3b
+ //A.3b
     void doubleValue(int& value){
         value = value * 2;
     }
+
+ //A.4a
+    void freeMatrix(int** matrix, int rows){
+
+        for (int i= 0; i <rows; i++){
+            delete[] matrix[i];
+        }
+
+        delete[] matrix;
+    }
+
+ //A.4b
+    int* resizeArray(int* oldArray, int oldSize, int newSize){
+
+        int* newArray= new int[newSize];
+
+        for (int i = 0; i < oldSize && i <newSize; i++){
+            newArray[i] = oldArray[i];
+        }
+
+        delete[] oldArray;
+
+        return newArray;
+    }
+

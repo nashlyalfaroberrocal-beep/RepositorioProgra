@@ -17,3 +17,9 @@ void findMinMax(int* array, int size, int* minResult, int* maxResult);
 
 //A.3b
 void doubleValue(int& value);
+
+//A.4a
+void freeMatrix(int** matrix, int rows);
+
+//A.4b
+int* resizeArray(int* oldArray, int oldSize, int newSize);
