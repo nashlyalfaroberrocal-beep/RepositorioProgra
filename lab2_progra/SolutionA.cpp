@@ -61,3 +61,32 @@
         return count;
     }
 
+//A.3a
+    void findMinMax(int* array, int size, int* minResult, int* maxResult){
+       
+        if (size <=0){
+            return;
+        }
+
+        int minValue= array[0];
+        int maxValue= array[0];
+
+        for (int i = 1; i < size; i++){
+
+            if (array[i]< minValue){
+                minValue = array[i];
+            }
+
+            if (array[i] > maxValue){
+                maxValue= array[i];
+            }
+        }
+
+        *minResult = minValue;
+        *maxResult = maxValue;
+    }
+
+    //A.3b
+    void doubleValue(int& value){
+        value = value * 2;
+    }
