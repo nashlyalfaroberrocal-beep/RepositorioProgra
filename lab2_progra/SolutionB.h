@@ -14,10 +14,11 @@ int findProduct(std::string* productNames, int productCount, std::string name);
 void updateStock(int* productStock, int index, int newQty);
 
 //B.4
-void priceMinMax(double* productPrices, int productCount, double* minPrice,double* maxPrice);
+void salesMatrix(int** sales, int productCount);
 
 //B.5
-void salesMatrix(int** sales, int productCount);
+void priceMinMax(double* productPrices, int productCount, double* minPrice,double* maxPrice);
+
 
 //B.6
 void showInventory(std::string* productNames, double* productPrices, int* productStock, int productCount);

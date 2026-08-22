@@ -139,6 +139,7 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="SolutionA.cpp" />
     <ClCompile Include="SolutionB.cpp" />
   </ItemGroup>

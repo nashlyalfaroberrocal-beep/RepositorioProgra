@@ -28,6 +28,7 @@ void addProduct(std::string*& productNames, double*& productPrices, int*& produc
     productPrices = newPrices;
     productStock= newStock;
     productCount++;
+
 }
 
 //B.2
@@ -45,13 +46,9 @@ int findProduct(std::string* productNames, int productCount, std::string name) {
 
 //B.3
 void updateStock(int* productStock, int index, int newQty) {
-    if (index < 0) {
-
-        std::cout << "Product not found." << std::endl;
-        return;
+    if (index >= 0) {
+        productStock[index] = newQty;
     }
-
-    productStock[index] = newQty;
 }
 
 //B.4
@@ -82,6 +79,8 @@ void salesMatrix(int** sales, int productCount){
 //B.5
 void priceMinMax(double* productPrices, int productCount, double* minPrice, double* maxPrice){
     if (productCount <= 0){
+        *minPrice = 0;
+        *maxPrice = 0;
         return;
     }
 
@@ -101,4 +100,22 @@ void priceMinMax(double* productPrices, int productCount, double* minPrice, doub
 
     *minPrice = minimum;
     *maxPrice = maximum;
+}
+
+//B.6
+void showInventory(std::string* productNames, double* productPrices, int* productStock, int productCount){
+
+    for (int i = 0; i < productCount; i++){
+        std::cout << "Product: " << productNames[i] << std::endl;
+        std::cout << "Price: " << productPrices[i] << std::endl;
+        std::cout << "Stock: " << productStock[i] << std::endl;
+        std::cout << std::endl;
+    }
+}
+
+//B.7
+void freeAll(std::string* productNames, double* productPrices, int* productStock){
+    delete[] productNames;
+    delete[] productPrices;
+    delete[] productStock;
 }

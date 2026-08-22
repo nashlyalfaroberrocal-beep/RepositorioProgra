@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include "SolutionA.h"
 
 //A.1a
     int countGreaterThan(int* array, int size, int limit){
