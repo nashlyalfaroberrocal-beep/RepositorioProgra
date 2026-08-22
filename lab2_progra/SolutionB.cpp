@@ -29,3 +29,76 @@ void addProduct(std::string*& productNames, double*& productPrices, int*& produc
     productStock= newStock;
     productCount++;
 }
+
+//B.2
+int findProduct(std::string* productNames, int productCount, std::string name) {
+
+    for (int i = 0; i < productCount; i++) {
+        if (productNames[i] == name) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+
+//B.3
+void updateStock(int* productStock, int index, int newQty) {
+    if (index < 0) {
+
+        std::cout << "Product not found." << std::endl;
+        return;
+    }
+
+    productStock[index] = newQty;
+}
+
+//B.4
+void salesMatrix(int** sales, int productCount){
+    for (int day = 0; day < 7; day++){
+        int dayTotal = 0;
+
+        for (int product =0; product < productCount; product++){
+            dayTotal += sales[day][product];
+        }
+
+        std::cout << "Day " << day + 1 << " total: "
+            << dayTotal << std::endl;
+    }
+
+    for (int product =0; product < productCount; product++){
+        int productTotal = 0;
+
+        for (int day = 0; day < 7; day++){
+            productTotal += sales[day][product];
+        }
+
+        std::cout << "Product " << product + 1 << " total: "
+            << productTotal << std::endl;
+    }
+}
+
+//B.5
+void priceMinMax(double* productPrices, int productCount, double* minPrice, double* maxPrice){
+    if (productCount <= 0){
+        return;
+    }
+
+    double minimum = productPrices[0];
+    double maximum = productPrices[0];
+
+    for (int i = 1; i < productCount; i++){
+
+        if (productPrices[i] < minimum){
+            minimum= productPrices[i];
+        }
+
+        if (productPrices[i] > maximum){
+            maximum = productPrices[i];
+        }
+    }
+
+    *minPrice = minimum;
+    *maxPrice = maximum;
+}

@@ -17,8 +17,7 @@ void updateStock(int* productStock, int index, int newQty);
 void priceMinMax(double* productPrices, int productCount, double* minPrice,double* maxPrice);
 
 //B.5
-
-
+void salesMatrix(int** sales, int productCount);
 
 //B.6
 void showInventory(std::string* productNames, double* productPrices, int* productStock, int productCount);
