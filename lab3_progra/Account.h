@@ -14,11 +14,11 @@ private:
 public:
     Account(std::string owner, double initialBalance);
 
+    Account(const Account& other);
+
     double getBalance() const;
 
     std::string getOwner() const;
-
-    Account(const Account& other);
 
     void deposit(double amount);
 
