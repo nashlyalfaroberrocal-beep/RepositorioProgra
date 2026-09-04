@@ -39,3 +39,18 @@ bool Account::withdraw(double amount){
 
     return false;
 }
+
+bool Account::operator==(Account other){
+    return balance ==other.balance;
+}
+
+int Account::getTotalAccounts(){
+    return totalAccounts;
+}
+
+void Account::transfer(Account& other, double amount){
+    if (amount > 0 && amount <= balance){
+        balance -= amount;
+        other.balance += amount;
+    }
+}
